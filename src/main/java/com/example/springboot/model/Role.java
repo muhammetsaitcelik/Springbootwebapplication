@@ -1,5 +1,6 @@
 package com.example.springboot.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,9 +12,9 @@ public class Role {
 	@GeneratedValue
 	private int role_id;
 	
-	private String role_name;
+	@Column(name="role_name")
+	private String role;
 
-	
 	public Role() {
 		super();
 	}
@@ -27,11 +28,11 @@ public class Role {
 	}
 
 	public String getRole() {
-		return role_name;
+		return role;
 	}
 
-	public void setRole(String role_name) {
-		this.role_name = role_name;
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 }
