@@ -28,6 +28,8 @@ public class User {
 
 	private String password;
 	
+	private Boolean enabled = true;
+	
 	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name="user_role", joinColumns=@JoinColumn(name="user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
@@ -65,13 +67,15 @@ public class User {
 		this.password = password;
 	}
 
-	public Set<Role> getRole() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRole(Set<Role> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 	
-	
+	public boolean isEnabled() {
+		return enabled;
+	}
 }
