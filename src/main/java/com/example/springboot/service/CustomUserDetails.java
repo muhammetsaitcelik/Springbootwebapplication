@@ -11,11 +11,9 @@ import com.example.springboot.model.User;
 
 public class CustomUserDetails implements UserDetails {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 30481067143623553L;
 	private User user;
+
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -52,7 +50,7 @@ public class CustomUserDetails implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public User getUser() {
