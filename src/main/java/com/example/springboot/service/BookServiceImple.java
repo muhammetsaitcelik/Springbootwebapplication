@@ -49,5 +49,10 @@ public class BookServiceImple implements BookService {
         bookRepository.deleteById(id);
     }
 
-
+    @Override
+    @Transactional
+    public List<Book> search(String keyword){
+    	
+    	return bookRepository.search(keyword);
+    }
 }

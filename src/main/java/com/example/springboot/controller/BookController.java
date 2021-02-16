@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/library")
@@ -31,4 +32,13 @@ public class BookController {
     public String Homepage() {
         return "bookhome";
     }
+    
+    @GetMapping("/search")
+    public String search(@RequestParam String keyword,Model theModel) {
+    	List<Book> result = bookService.search(keyword);
+	    
+	    theModel.addAttribute("books", result);
+	   
+	    return "/search";    
+	}
 }

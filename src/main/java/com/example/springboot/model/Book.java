@@ -1,10 +1,13 @@
 package com.example.springboot.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Table(name="book")
@@ -19,8 +22,9 @@ public class Book {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="author")
-	private String author;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="author_id")
+	private Author author;
 	
 	@Column(name="publisher")
 	private String publisher;
@@ -38,8 +42,7 @@ public class Book {
 		
 	}
 	
-	
-	public Book(int id, String name, String author, String publisher, int year, int isbn, String details) {
+	public Book(int id, String name, Author author, String publisher, int year, int isbn, String details) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -49,7 +52,6 @@ public class Book {
 		this.isbn = isbn;
 		this.details = details;
 	}
-
 
 	public int getId() {
 		return id;
@@ -67,11 +69,11 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getAuthor() {
+	public Author getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
