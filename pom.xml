@@ -22,7 +22,8 @@
 	  <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-        </dependency>
+		  <version>1.4.200</version>
+	  </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
@@ -44,15 +45,41 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+  			  <groupId>org.hibernate</groupId>
+  			  <artifactId>hibernate-search</artifactId>
+   			 <version>5.11.9.Final</version>
+   			 <type>pom</type>
+		</dependency>
+		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
 		<dependency>
-    <groupId>org.thymeleaf</groupId>
-    <artifactId>thymeleaf</artifactId>
-    <version>3.0.11.RELEASE</version>
-</dependency>
-
+   			 <groupId>org.hibernate</groupId>
+   			 <artifactId>hibernate-ehcache</artifactId>
+   			 <version>5.5.4.Final</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache-core -->
+		<dependency>
+    			<groupId>net.sf.ehcache</groupId>
+   				 <artifactId>ehcache-core</artifactId>
+    				<version>2.6.11</version>
+		</dependency>
+		<dependency>
+   			 <groupId>org.thymeleaf</groupId>
+    		<artifactId>thymeleaf</artifactId>
+   			 <version>3.0.12.RELEASE</version>
+		</dependency>
+		<dependency>
+   				 <groupId>org.hibernate</groupId>
+   				 <artifactId>hibernate-ehcache</artifactId>
+    			<version>5.5.4.Final</version>
+		</dependency>
+		<dependency>
+ 			  	 <groupId>c3p0</groupId>
+ 		  		 <artifactId>c3p0</artifactId>
+  		 		 <version>0.9.1.2</version>
+		</dependency>
 		<dependency>
  			<groupId>org.springframework.boot</groupId>
  				<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -79,6 +106,7 @@
 		<dependency>
 	   		 <groupId>org.hibernate</groupId>
    			 <artifactId>hibernate-core</artifactId>
+			<version>5.5.4.Final</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -90,7 +118,7 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>font-awesome</artifactId>
-			<version>4.7.0</version>
+			<version>5.15.3</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->

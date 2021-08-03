@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kütüphane Uygulamamıza Hoş Geldiniz</h2>
+<div id = "container">
+<div>
+
+<table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th> Name </th>
+                    <th> Author </th>
+                    <th> Publisher </th>
+                    <th> Year </th>
+                    <th> ISBN </th>
+                    <th> Details </th>
+                </tr>
+            </thead>
+
+            <th:block th:each="book: ${books}">
+			<tr>
+            <td th:text="${book.name}"></td>
+            <td th:text="${book.author.getName()}"></td>
+            <td th:text="${book.publisher}"></td>
+            <td th:text="${book.year}"></td>
+            <td th:text="${book.isbn}"></td>
+            <td th:text="${book.details}"></td>
+			</tr>
+            </th:block>
+</table>
+
+</div>
+</div>
+
+</body>
+</html>

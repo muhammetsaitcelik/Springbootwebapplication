@@ -29,7 +29,7 @@ public class BookServiceImple implements BookService {
         // TODO Auto-generated method stub
         bookRepository.save(book);
     }
-
+    
     @Override
     @Transactional
     public Book getBook(int id) {
@@ -53,6 +53,6 @@ public class BookServiceImple implements BookService {
     @Transactional
     public List<Book> search(String keyword){
     	
-    	return bookRepository.search(keyword);
+    	return (List<Book>) bookRepository.findByName(keyword);
     }
 }

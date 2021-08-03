@@ -33,9 +33,9 @@ public class BookController {
         return "bookhome";
     }
     
-    @GetMapping("/search")
-    public String search(@RequestParam String keyword,Model theModel) {
-    	List<Book> result = bookService.search(keyword);
+    @RequestMapping("/search")
+	public String search(@RequestParam String keyword,Model theModel) {
+	    List<Book> result = bookService.search(keyword);
 	    
 	    theModel.addAttribute("books", result);
 	   

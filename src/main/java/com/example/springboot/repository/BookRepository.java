@@ -12,9 +12,5 @@ import com.example.springboot.model.Book;
 @Repository
 public interface BookRepository extends JpaRepository <Book,Integer>{
 
-	@Query(value = "SELECT c FROM Book c WHERE c.name LIKE '%' || :keyword || '%'"
-            + " OR c.year LIKE '%' || :keyword || '%'"
-            + " OR c.isbn LIKE '%' || :keyword || '%'")
-	public List<Book> search(@Param("keyword") String keyword);
-	
+	Book findByName(String Bookname);
 }
